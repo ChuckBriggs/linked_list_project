@@ -10,13 +10,12 @@ class LinkedList
 
   def append(value)
     # adds a new node containing value to the end of the list
-    new_node = Node.new(value)
     if @head
       node = @head
       node = node.next_node while node.next_node
-      node.next_node = new_node
+      node.next_node = Node.new(value)
     else
-      @head = new_node
+      @head = Node.new(value)
     end
   end
 
