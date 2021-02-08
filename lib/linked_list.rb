@@ -67,6 +67,21 @@ class LinkedList
 
   def pop
     # removes the last element from the list
+    return unless @head
+
+    if @head.next_node
+      second_to_last_node = @head
+      last_node = @head.next_node
+      while last_node.next_node
+        second_to_last_node = last_node
+        last_node = last_node.next_node
+      end
+      second_to_last_node.next_node = nil
+    else
+      last_node = @head.dup
+      @head = nil
+    end
+    last_node
   end
 
   def contains?(value)
