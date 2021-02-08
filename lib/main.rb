@@ -12,11 +12,13 @@ list.append(40)
 list.append(95)
 
 puts list.print
-p list.find('x')
-p list.find(0)
-p list.find(666)
-p list.find(38)
-p list.find(8)
-p list.find(40)
-p list.find(95)
+puts list.to_s
+
+# p list.find('x')
+# p list.find(0)
+# p list.find(666)
+# p list.find(38)
+# p list.find(8)
+# p list.find(40)
+# p list.find(95)
 # puts "List size:\t#{list.size}"
