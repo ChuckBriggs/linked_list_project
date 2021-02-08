@@ -12,9 +12,10 @@ list.append(40)
 list.append(95)
 
 puts list.print
-list.insert_at(420, 2)
+list.remove_at(1)
 puts list.print
 
+# list.insert_at(420, 2)
 # puts list.to_s
 
 # p list.find('x')
