@@ -11,3 +11,5 @@ list.prepend(666)
 list.append(40)
 list.append(95)
 list.print
+
+puts "List size:\t#{list.size}"

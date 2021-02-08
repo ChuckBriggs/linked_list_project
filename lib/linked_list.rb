@@ -28,6 +28,16 @@ class LinkedList
 
   def size
     # returns the total number of nodes in the list
+    node_count = 0
+    current_node = @head
+    if current_node
+      node_count += 1
+      while current_node.next_node
+        node_count += 1
+        current_node = current_node.next_node
+      end
+    end
+    node_count
   end
 
   def head
