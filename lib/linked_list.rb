@@ -126,15 +126,12 @@ class LinkedList
 
   def insert_at(value, index)
     # inserts the node with the provided value at the given index
-    new_node = Node.new(value)
     if index > 0
       node = @head
       (index - 1).times { node = node.next_node }
-      new_node.next_node = node.next_node
-      node.next_node = new_node
+      node.next_node = Node.new(value, node.next_node)
     else
-      new_node.next_node = @head
-      @head = new_node
+      @head = Node.new(value, @head)
     end
   end
 
