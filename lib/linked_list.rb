@@ -86,6 +86,15 @@ class LinkedList
 
   def contains?(value)
     # returns true if the passed in value is in the list and otherwise returns false
+    if @head
+      node = @head
+      return true if node.value == value
+      while node.next_node
+        node = node.next_node
+        return true if node.value == value
+      end
+    end
+    false
   end
 
   def find(value)
