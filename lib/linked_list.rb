@@ -42,14 +42,27 @@ class LinkedList
 
   def head
     # returns the first node in the list
+    @head
   end
 
   def tail
     # returns the last node in the list
+    node = @head
+    if node
+      while node.next_node
+        node = node.next_node
+      end
+    end
+    node
   end
 
   def at(index)
     # returns the node at the given index
+    node = @head
+    index.times do
+      node = node.next_node
+    end
+    node
   end
 
   def pop
