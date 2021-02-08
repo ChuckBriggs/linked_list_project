@@ -113,7 +113,6 @@ class LinkedList
 
   def to_s
     # represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
-    # ( value ) -> ( value ) -> ( value ) -> nil
     return unless @head
 
     node = @head
@@ -127,6 +126,16 @@ class LinkedList
 
   def insert_at(value, index)
     # inserts the node with the provided value at the given index
+    new_node = Node.new(value)
+    if index > 0
+      node = @head
+      (index - 1).times { node = node.next_node }
+      new_node.next_node = node.next_node
+      node.next_node = new_node
+    else
+      new_node.next_node = @head
+      @head = new_node
+    end
   end
 
   def remove_at(index)
