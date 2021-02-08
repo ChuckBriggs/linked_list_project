@@ -57,9 +57,7 @@ class LinkedList
   def at(index)
     # returns the node at the given index
     node = @head
-    index.times do
-      node = node.next_node
-    end
+    index.times { node = node.next_node }
     node
   end
 
